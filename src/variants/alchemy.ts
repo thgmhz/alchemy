@@ -5,8 +5,8 @@ import { rgb, rgba } from '~/util/color'
 
 const palette = {
   base: {
-    BG: rgb('#0c0a15'),
-    FG: rgb('#E1E1E6'),
+    BG: rgb('#0f0918'),
+    FG: rgb('#e2e2ea'),
     SELECTION: rgb('#312855'),
     COMMENT: rgb('#746699'),
     CYAN: rgb('#988bc7'),
@@ -22,7 +22,7 @@ const palette = {
     TEMP_PROPERTY_QUOTES: rgb('#7159C1'),
     AlmostComment: rgb('#5A4B81'),
     LineNumber: rgb('#544776'),
-    LineHighlight: rgba('#44475A', '75'),
+    LineHighlight: rgba('#4b5a44', '75'),
     NonText: rgba('#FFFFFF', '1A'),
     WHITE: rgb('#E1E1E6'),
     TAB_DROP_BG: rgba('#44475A', '70'),
@@ -32,22 +32,22 @@ const palette = {
     BGDark: rgb('#15121E'),
   },
   ansi: {
-    COLOR0: rgb('#201B2D'),
+    COLOR0: rgb('#1e0f39'),
     COLOR1: rgb('#FF79C6'),
-    COLOR2: rgb('#67e480'),
-    COLOR3: rgb('#e7de79'),
-    COLOR4: rgb('#78D1E1'),
+    COLOR2: rgb('#70e27a'),
+    COLOR3: rgb('#40c263'),
+    COLOR4: rgb('#194ab3'),
     COLOR5: rgb('#988bc7'),
     COLOR6: rgb('#A1EFE4'),
-    COLOR7: rgb('#E1E1E6'),
+    COLOR7: rgb('#e9e9e9'),
     COLOR8: rgb('#626483'),
-    COLOR9: rgb('#ed4556'),
+    COLOR9: rgb('#e27070'),
     COLOR10: rgb('#00F769'),
-    COLOR11: rgb('#e7de79'),
+    COLOR11: rgb('#E0A91D'),
     COLOR12: rgb('#78D1E1'),
-    COLOR13: rgb('#988bc7'),
+    COLOR13: rgb('#231548'),
     COLOR14: rgb('#A4FFFF'),
-    COLOR15: rgb('#F7F7FB'),
+    COLOR15: rgb('#ffffff'),
   },
 }
 
@@ -56,7 +56,7 @@ export const alchemy: ThemeSchema = {
   type: 'dark',
   colors: {
     // Integrated Terminal Colors
-    'terminal.background': palette.base.BG,
+    'terminal.background': '#0c0714',
     'terminal.foreground': palette.base.FG,
     'terminal.ansiBrightBlack': palette.ansi.COLOR8,
     'terminal.ansiBrightRed': palette.ansi.COLOR9,
@@ -74,7 +74,7 @@ export const alchemy: ThemeSchema = {
     'terminal.ansiMagenta': palette.ansi.COLOR5,
     'terminal.ansiCyan': palette.ansi.COLOR6,
     'terminal.ansiWhite': palette.ansi.COLOR7,
-    'terminal.selectionBackground': alpha(palette.other.AlmostComment, 45),
+    'terminal.selectionBackground': alpha(palette.base.SELECTION, 50),
     'terminalCursor.background': palette.ansi.COLOR0,
     'terminalCursor.foreground': palette.base.FG,
 
@@ -83,7 +83,7 @@ export const alchemy: ThemeSchema = {
     // contrastActiveBorder: palette.other.BGDark,
 
     // Base Colors
-    focusBorder: palette.other.AlmostComment,
+    focusBorder: palette.base.SELECTION,
     foreground: palette.base.FG,
     // 'widget.shadow': palette.base.FG,
     'selection.background': palette.base.PURPLE,
@@ -116,9 +116,9 @@ export const alchemy: ThemeSchema = {
 
     // Scroll Bar Control
     // 'scrollbar.shadow': palette.base.RED,
-    // 'scrollbarSlider.activeBackground': palette.base.RED,
-    // 'scrollbarSlider.background': palette.base.RED,
-    // 'scrollbarSlider.hoverBackground': palette.base.RED,
+    'scrollbarSlider.activeBackground': palette.base.SELECTION,
+    'scrollbarSlider.background': alpha(palette.base.SELECTION, 100),
+    'scrollbarSlider.hoverBackground': alpha(palette.base.SELECTION, 200),
 
     // Badge
     'badge.foreground': palette.base.FG,
@@ -128,42 +128,42 @@ export const alchemy: ThemeSchema = {
     'progressBar.background': palette.base.PINK,
 
     // List & Trees
-    'list.activeSelectionBackground': alpha(palette.base.SELECTION, 60),
+    'list.activeSelectionBackground': alpha(palette.base.SELECTION, 90),
     'list.activeSelectionForeground': palette.base.FG,
     'list.dropBackground': palette.base.SELECTION,
     'list.focusBackground': palette.other.LineHighlight,
     'list.highlightForeground': palette.base.CYAN,
-    'list.hoverBackground': alpha(palette.base.SELECTION, 65),
-    'list.inactiveSelectionBackground': alpha(palette.base.SELECTION, 40),
+    'list.hoverBackground': alpha(palette.base.SELECTION, 60),
+    'list.inactiveSelectionBackground': alpha(palette.base.SELECTION, 90),
     // 'list.inactiveSelectionForeground': alpha(palette.base.SELECTION, 40),
     'list.warningForeground': palette.base.ORANGE,
     'list.errorForeground': palette.base.RED,
-    // 'list.hoverForeground': palette.base.RED,
+    'list.hoverForeground': palette.base.GREEN,
     // 'list.focusForeground': palette.base.RED,
 
     // Activity Bar
-    'activityBar.background': palette.base.BG,
+    'activityBar.background': '#140c21',
     'activityBar.inactiveForeground': palette.other.AlmostComment,
     // 'activityBar.dropBackground': palette.other.AlmostComment,
     'activityBar.foreground': palette.base.FG,
-    'activityBar.border': null,
+    'activityBar.border': '#000000',
     'activityBar.activeBorder': alpha(palette.base.PINK, 80),
     'activityBar.activeBackground': alpha(palette.base.SELECTION, 50),
     'activityBarBadge.background': palette.base.PINK,
     'activityBarBadge.foreground': palette.other.BGDark,
 
     // Side Bar
-    'sideBar.background': palette.base.BG,
+    'sideBar.background': '#0a0510',
     // 'sideBar.foreground': palette.base.BG,
-    // 'sideBar.border': palette.other.BGLighter,
+    'sideBar.border': '#000000',
     'sideBarTitle.foreground': palette.base.FG,
     'sideBarSectionHeader.background': palette.base.BG,
     // 'sideBarSectionHeader.foreground': palette.base.BG,
-    'sideBarSectionHeader.border': palette.other.BGLighter,
+    'sideBarSectionHeader.border': palette.base.SELECTION,
 
     // Text Link
-    'textLink.foreground': palette.base.PINK,
-    'textLink.activeForeground': alpha(palette.base.PINK, 200),
+    'textLink.foreground': palette.base.GREEN,
+    'textLink.activeForeground': palette.base.GREEN,
 
     // Editor Group & Tabs
     // 'editorGroup.background': palette.base.PINK,
@@ -172,7 +172,7 @@ export const alchemy: ThemeSchema = {
     // 'editorGroupHeader.noTabsBackground': palette.other.TAB_DROP_BG,
     'editorGroupHeader.tabsBackground': palette.other.BGDark,
     // 'editorGroupHeader.tabsBorder': palette.other.TAB_DROP_BG,
-    'tab.activeBackground': alpha(palette.base.SELECTION, 40),
+    'tab.activeBackground': '#140c21',
     'tab.activeForeground': palette.base.FG,
     'tab.border': palette.other.BGDark,
     'tab.activeBorderTop': alpha(palette.base.PINK, 80),
@@ -312,27 +312,27 @@ export const alchemy: ThemeSchema = {
     'editorOverviewRuler.incomingContentForeground': palette.base.PURPLE,
 
     // Panel Colors
-    'panel.background': palette.base.BG,
-    'panel.border': palette.other.BGLighter,
-    'panelTitle.activeBorder': palette.base.RED,
+    'panel.background': '#0c0714',
+    'panel.border': '#000000',
+    'panelTitle.activeBorder': alpha(palette.base.PINK, 80),
     'panelTitle.activeForeground': palette.base.FG,
-    'panelTitle.inactiveForeground': alpha(palette.base.FG, 80),
+    'panelTitle.inactiveForeground': palette.other.AlmostComment,
 
     // Status Bar Colors
-    'statusBar.background': palette.other.BGDark,
+    'statusBar.background': '#140c21',
     'statusBar.foreground': palette.base.FG,
     'statusBar.debuggingBackground': palette.base.PINK,
     'statusBar.debuggingForeground': palette.other.BGDark,
     'statusBar.noFolderBackground': palette.other.BGDark,
     'statusBar.noFolderForeground': palette.base.FG,
-    // 'statusBarItem.activeBackground': palette.base.FG,
-    // 'statusBarItem.hoverBackground': palette.base.FG,
+    // 'statusBarItem.activeBackground': palette.base.GREEN,
+    'statusBarItem.hoverBackground': palette.base.SELECTION,
     'statusBarItem.prominentBackground': palette.base.PINK,
     'statusBarItem.prominentForeground': palette.other.BGDark,
     'statusBarItem.prominentHoverBackground': palette.base.ORANGE,
-    'statusBarItem.remoteBackground': palette.base.PINK,
-    'statusBarItem.remoteForeground': palette.other.BGDark,
-    // 'statusBar.border': palette.base.PINK,
+    'statusBarItem.remoteBackground': palette.base.SELECTION,
+    'statusBarItem.remoteForeground': palette.base.FG,
+    'statusBar.border': '#140c21',
 
     // Merge Conflicts
     'titleBar.activeBackground': palette.base.BG,
@@ -390,7 +390,7 @@ export const alchemy: ThemeSchema = {
 
     // Breadcrumbs
     'breadcrumb.foreground': palette.base.CYAN,
-    'breadcrumb.background': palette.base.BG,
+    'breadcrumb.background': '#140c21',
     'breadcrumb.focusForeground': palette.base.FG,
     'breadcrumb.activeSelectionForeground': palette.base.FG,
     'breadcrumbPicker.background': palette.other.BGDark,
