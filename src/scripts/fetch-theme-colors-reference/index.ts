@@ -1,5 +1,4 @@
 import fs from 'fs'
-import { JSONSchema4 } from 'json-schema'
 import { compile } from 'json-schema-to-typescript'
 import path from 'path'
 import toJsonSchema from 'to-json-schema'
@@ -27,7 +26,7 @@ async function run() {
     await fs.promises.readFile(config.prettierConfigFile, 'utf8'),
   )
 
-  const tsdBuffer = await compile(schema as JSONSchema4, typeName, {
+  const tsdBuffer = await compile(schema as never, typeName, {
     style: prettierConfig,
   })
   const tsdFile = path.join(config.typesDir, `${typeName}.d.ts`)
