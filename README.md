@@ -11,7 +11,7 @@
 </p>
 
 <p align="center">
-  -- TO DO: SCREENSHOT HERE --
+  <img src="/screenshot.png" alt="Alchemy Theme - Screenshot">
 </p>
 
 # Install
@@ -39,8 +39,8 @@ Run Visual Studio Code. The `Alchemy Theme` theme will be available from `File -
 ## Created by
 
 | [![Thiago Munhoz](https://github.com/thgmhz.png?size=100)](https://github.com/thgmhz) |
-| ---------------------------------------------------------------------------------------------------- |
-| [Thiago Munhoz](https://github.com/thgmhz)                                                   |
+| ------------------------------------------------------------------------------------- |
+| [Thiago Munhoz](https://github.com/thgmhz)                                            |
 
 ## License
 
