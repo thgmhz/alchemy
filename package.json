@@ -5,7 +5,7 @@
   "description": "A dark theme for VS Code alchemists 🔥",
   "author": "Thiago Munhoz <thgmhz@gmail.com>",
   "publisher": "thgmhz",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "engines": {
     "vscode": "^1.78.0"
   },
